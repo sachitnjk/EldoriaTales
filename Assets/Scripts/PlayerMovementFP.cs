@@ -17,6 +17,9 @@ public class PlayerMovementFP : MonoBehaviour
 	private Vector3 moveDirection;
 
 	private bool isMoving;
+	private bool isGrounded;
+
+	private Vector3 verticalVelocity;
 
 	[SerializeField] private float moveSpeed;
 
@@ -31,6 +34,8 @@ public class PlayerMovementFP : MonoBehaviour
 
 		playerCharController = GetComponent<CharacterController>();
 		playerAnimator = GetComponentInChildren<Animator>();
+
+		isMoving = false;
 	}
 
 	private void Update()
@@ -40,19 +45,30 @@ public class PlayerMovementFP : MonoBehaviour
 
 	private void Move()
 	{
+
 		moveInput = moveAction.ReadValue<Vector2>();
 		
 		moveDirection = transform.forward * moveInput.y + transform.right * moveInput.x;
 
+		verticalVelocity.y += Physics.gravity.y * Time.deltaTime;
+		playerCharController.Move(verticalVelocity * Time.deltaTime);
+
+		if(playerCharController.isGrounded ) 
+		{
+			verticalVelocity.y = -2f;
+		}
+
+
 		if(moveDirection.magnitude > 0) 
 		{
 			playerCharController.Move(moveDirection.normalized * moveSpeed * Time.deltaTime);
+			isMoving = true;
 			playerAnimator.SetBool("isWalking", true);
 		}
 		else
 		{
+			isMoving = false;
 			playerAnimator.SetBool("isWalking", false);
 		}
-		//Add animator functionality here if needed
 	}
 }
