@@ -165,6 +165,37 @@ MonoBehaviour:
   playerCharController: {fileID: 1674357020839732050}
   camSensitivity: 0.5
   camVerticalRotationClampAngle: 35
+--- !u!1 &1793987579661710389
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3883751008769806783}
+  m_Layer: 0
+  m_Name: InteractionPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3883751008769806783
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793987579661710389}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.049, z: 0.24}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7120930703811721277}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7120479611399975715
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,6 +484,7 @@ GameObject:
   - component: {fileID: 7120930703811721277}
   - component: {fileID: 1674357020839732050}
   - component: {fileID: 6008490193553823620}
+  - component: {fileID: 2432721004827237631}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -475,6 +507,7 @@ Transform:
   - {fileID: 7123633663331662711}
   - {fileID: 8021358798758157733}
   - {fileID: 2898912872538574294}
+  - {fileID: 3883751008769806783}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -493,7 +526,7 @@ CharacterController:
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
-  m_SkinWidth: 0.08
+  m_SkinWidth: 0.001
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &6008490193553823620
@@ -509,6 +542,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+--- !u!114 &2432721004827237631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7120930703811721276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 335689451cec1ba40a82d0b65a39e8fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionPoint: {fileID: 3883751008769806783}
+  detectionDistance: 10
 --- !u!1 &7121397480984168203
 GameObject:
   m_ObjectHideFlags: 0
