@@ -10,11 +10,13 @@ public class PlayerMovementFP : MonoBehaviour
 	private PlayerInput playerInput;
 	private InputAction moveAction;
 
-	//private Animator playerAnimator;
+	private Animator playerAnimator;
 	private CharacterController playerCharController;
 
 	private Vector2 moveInput;
 	private Vector3 moveDirection;
+
+	private bool isMoving;
 
 	[SerializeField] private float moveSpeed;
 
@@ -28,7 +30,7 @@ public class PlayerMovementFP : MonoBehaviour
 		}
 
 		playerCharController = GetComponent<CharacterController>();
-		//playerAnimator = GetComponentInChildren<Animator>();
+		playerAnimator = GetComponentInChildren<Animator>();
 	}
 
 	private void Update()
@@ -42,8 +44,15 @@ public class PlayerMovementFP : MonoBehaviour
 		
 		moveDirection = transform.forward * moveInput.y + transform.right * moveInput.x;
 
-		playerCharController.Move(moveDirection.normalized * moveSpeed * Time.deltaTime);
-
+		if(moveDirection.magnitude > 0) 
+		{
+			playerCharController.Move(moveDirection.normalized * moveSpeed * Time.deltaTime);
+			playerAnimator.SetBool("isWalking", true);
+		}
+		else
+		{
+			playerAnimator.SetBool("isWalking", false);
+		}
 		//Add animator functionality here if needed
 	}
 }
