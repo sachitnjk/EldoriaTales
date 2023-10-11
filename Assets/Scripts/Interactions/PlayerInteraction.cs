@@ -49,7 +49,7 @@ public class PlayerInteraction : MonoBehaviour
 		RaycastHit hit;
 		Ray ray = new Ray(interactionPoint.position, interactionPoint.forward);
 
-		if (Physics.Raycast(ray, out hit, detectionDistance))
+		if ( !GameManager.Instance.isInteracting && Physics.Raycast(ray, out hit, detectionDistance))
 		{
 			if (hit.collider.CompareTag("NPC"))
 			{

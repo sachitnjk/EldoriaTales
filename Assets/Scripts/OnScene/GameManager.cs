@@ -20,11 +20,6 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	private void Update()
-	{
-		Debug.Log(isInteracting);
-	}
-
 	private void Start()
 	{
 		isInteracting = false;
