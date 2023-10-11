@@ -25,6 +25,7 @@ public class PlayerMovementFP : MonoBehaviour
 
 	private void Start()
 	{
+		Cursor.lockState = CursorLockMode.Locked;
 		playerInput = InputProvider.GetPlayerInput();
 
 		if(playerInput != null ) 

@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,14 +14,17 @@ public class PlayerInteraction : MonoBehaviour
 	[SerializeField] private float detectionDistance;
 	private NPCInteractedScript npcInteractedScript;
 	private GameObject interactingNPC;
-	private bool isInteracting;
+	private GameObject textArea;
+	private CharacterController playerCharController;
 
 	private void Start()
 	{
 		playerInput = InputProvider.GetPlayerInput();
+		playerCharController = GetComponent<CharacterController>();
+		textArea = GameManager.Instance.InputTextArea;
 		interactionAction = playerInput.actions["Interaction"];
 
-		isInteracting = false;
+		InputTextController(false);
 	}
 
 	private void Update()
@@ -27,6 +32,15 @@ public class PlayerInteraction : MonoBehaviour
 		if(interactionAction.WasPerformedThisFrame())
 		{
 			Interact();
+		}
+		if(GameManager.Instance.isInteracting) 
+		{
+			InputTextController(true);
+		}
+		else
+		{
+			Cursor.lockState = CursorLockMode.Locked;
+			InputTextController(false);
 		}
 	}
 
@@ -39,13 +53,14 @@ public class PlayerInteraction : MonoBehaviour
 		{
 			if (hit.collider.CompareTag("NPC"))
 			{
-				isInteracting = true;
+				GameManager.Instance.isInteracting = true;
 				interactingNPC = hit.collider.gameObject;
 				TurnNPCToPlayer();
+				Cursor.lockState = CursorLockMode.Confined;
 			}
 			else
 			{
-				isInteracting = false;
+				GameManager.Instance.isInteracting = false;
 			}
 		}
 	}
@@ -54,5 +69,11 @@ public class PlayerInteraction : MonoBehaviour
 	{
 		npcInteractedScript = interactingNPC.GetComponent<NPCInteractedScript>();
 		npcInteractedScript.TurnToPlayer(gameObject.transform);
+	}
+
+	private void InputTextController(bool activeStatus)
+	{
+		textArea.SetActive(activeStatus);
+		playerCharController.enabled = !activeStatus;
 	}
 }
