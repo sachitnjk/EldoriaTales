@@ -27,7 +27,7 @@ public class UIManager : MonoBehaviour
 		if(GameManager.Instance.isInteracting && enterAction.WasPerformedThisFrame())
 		{
 			userInput = chatInputField.text;
-			npcName = "NPC1";
+			npcName = GameManager.Instance.interactingNPCName;
 			chatGPTManager.AskChatGPT(npcName, userInput);
 			chatInputField.text = "";
 		}

@@ -68,6 +68,7 @@ public class PlayerInteraction : MonoBehaviour
 	private void TurnNPCToPlayer()
 	{
 		npcInteractedScript = interactingNPC.GetComponent<NPCInteractedScript>();
+		GameManager.Instance.interactingNPCName = npcInteractedScript.npcName;
 		npcInteractedScript.TurnToPlayer(gameObject.transform);
 	}
 

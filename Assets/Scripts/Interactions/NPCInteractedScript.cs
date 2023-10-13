@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class NPCInteractedScript : MonoBehaviour
 {
+	public string npcName;
 	private Vector3 directionToPlayer;
 
 	public void TurnToPlayer(Transform player)

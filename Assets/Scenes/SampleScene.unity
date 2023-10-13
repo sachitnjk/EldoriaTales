@@ -2507,6 +2507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 080f8bc1bb83fee429d9d379a5ce44e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcName: 
 --- !u!1 &1116763776
 GameObject:
   m_ObjectHideFlags: 0
@@ -2563,6 +2564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 080f8bc1bb83fee429d9d379a5ce44e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcName: Luna
 --- !u!1 &1345339546
 GameObject:
   m_ObjectHideFlags: 0
@@ -2614,6 +2616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 080f8bc1bb83fee429d9d379a5ce44e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcName: 
 --- !u!1 &1372816366
 GameObject:
   m_ObjectHideFlags: 0
@@ -2818,6 +2821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 080f8bc1bb83fee429d9d379a5ce44e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcName: Jane
 --- !u!1 &1405185601
 GameObject:
   m_ObjectHideFlags: 0

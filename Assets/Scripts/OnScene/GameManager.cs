@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 	[field: SerializeField] public GameObject InputTextArea { get;private set; }
 	public bool isInteracting {  get; set; }
 
+	public string interactingNPCName { get; set; }
+
 	private void Awake()
 	{
 		if (Instance == null)
