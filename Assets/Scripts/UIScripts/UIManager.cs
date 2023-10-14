@@ -33,4 +33,9 @@ public class UIManager : MonoBehaviour
 		}
 	}
 
+	public void ReturnFromConversation()
+	{
+		GameManager.Instance.isInteracting = false;
+	}
+
 }
