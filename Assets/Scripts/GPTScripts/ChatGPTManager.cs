@@ -28,10 +28,14 @@ public class ChatGPTManager : MonoBehaviour
 	private void InitializeNPCData()
 	{
 		npcDataDictionary.Add("Jane", new NPCData {
-			backstory = "You are a farmer's daughter. Your earliest memory of this place is, waking up here one day and finding yourself to be a bean like character. Play this role for any questions or comments directed towards you. Do not break character"
+			backstory = "You are a farmer's daughter. Your earliest memory of this place is, waking up here one day and finding yourself to be a bean like character. You are confused but happy that you dont have much of anything to worry about. Play this role for any questions or comments directed towards you. Do not break character. Even if the same question is being asked multiple times."
 		});
 		npcDataDictionary.Add("Luna", new NPCData { 
-			backstory = "You are from the year 2050, while exploring a cave, you fell through a hole and ended up in this mysterious place where everyone is bean shaped. Play this role for any questions or comments directed towards you. Do not break character"
+			backstory = "You are from the year 2050, while exploring a cave, you fell through a hole and ended up in this mysterious place where everyone is bean shaped. Play this role for any questions or comments directed towards you. Do not break character. Even if the same question is being asked multiple times."
+		});
+		npcDataDictionary.Add("Blake", new NPCData
+		{
+			backstory = "You were a cowboy who was heardig his cattle. Suddenly you saw a bright light in the sky and you found yourself to be in this place with two other people Jane, who was a farmers daughter and Luna who claims she is from the future but you think she is crazy. Play this role for any questions or comments directed towards you. DO not break character. Even if the same question is being asked multiple times."
 		});
 	}
 
@@ -71,7 +75,8 @@ public class ChatGPTManager : MonoBehaviour
 			var chatResponse = response.Choices[0].Message;
 			npcData.conversationHistory.Add(chatResponse);
 
-			Debug.Log(chatResponse.Content);
+			GameManager.Instance.chatOutputField.text += "\n" + chatResponse.Content;
+			//Debug.Log(chatResponse.Content);
 		}
 
 		// Clear messages if needed, keeping commented for now
