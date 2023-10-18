@@ -6,7 +6,7 @@ using UnityEngine.Rendering;
 
 public class NPCController : MonoBehaviour
 {
-	public NPCState initialState = NPCState.Idle;
+	public NPCState initialState;
 	public float CurrentSpeed {  get;private set; }
 
 	[Header("NPC basic attributes")]
@@ -16,13 +16,19 @@ public class NPCController : MonoBehaviour
 
 	private NPCStateBase currentState;
 
+	private void Start()
+	{
+		currentState = CreateState(initialState);
+		currentState.EnterState();
+	}
+
 	private void Update()
 	{
-		
-		if(currentState != null)
+		if (currentState != null)
 		{
 			currentState.UpdateState();
 		}
+		Debug.Log(currentState);
 	}
 
 	private NPCStateBase CreateState(NPCState state)
@@ -31,12 +37,12 @@ public class NPCController : MonoBehaviour
 		{
 			case NPCState.Idle:
 				return new IdleState(this);
-			case NPCState.IdleMove:
-				//return new IdleMoveState(this);
-			case NPCState.ChattingNPC:
-				//return new ChattingNPCState(this);
-			case NPCState.ChattingPlayer:
-				//return new ChattingPlayer(this);
+			//case NPCState.IdleMove:
+			//	return new IdleMoveState(this);
+			//case NPCState.ChattingNPC:
+			//return new ChattingNPCState(this);
+			//case NPCState.ChattingPlayer:
+			//return new ChattingPlayer(this);
 			default:
 				return null;
 		}
@@ -61,16 +67,16 @@ public class NPCController : MonoBehaviour
 		CurrentSpeed = updatedSpeed;
 	}
 
-	private void InteractionCheckChange()
-	{
-		if(GameManager.Instance.isInteractingWithPlayer) 
-		{
-			ChangeState(NPCState.ChattingPlayer);
-		}
-		if(!GameManager.Instance.isInteractingWithPlayer && GameManager.Instance.isInteractingWithNPC) 
-		{
-			ChangeState(NPCState.ChattingNPC);
-		}
-	}
+	//private void InteractionCheckChange()
+	//{
+	//	if(GameManager.Instance.isInteractingWithPlayer) 
+	//	{
+	//		ChangeState(NPCState.ChattingPlayer);
+	//	}
+	//	if(!GameManager.Instance.isInteractingWithPlayer && GameManager.Instance.isInteractingWithNPC) 
+	//	{
+	//		ChangeState(NPCState.ChattingNPC);
+	//	}
+	//}
 
 }

@@ -4060,7 +4060,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1645872658069104
 GameObject:
   m_ObjectHideFlags: 0
@@ -4072,9 +4072,10 @@ GameObject:
   - component: {fileID: 4182031922024626}
   - component: {fileID: 33290189632203310}
   - component: {fileID: 23951923930237550}
-  - component: {fileID: 1064891692}
   - component: {fileID: 8285787866416504384}
   - component: {fileID: 8285787866416504385}
+  - component: {fileID: 1064891692}
+  - component: {fileID: 8285787866416504386}
   m_Layer: 0
   m_Name: Bean_1_F_Elise
   m_TagString: NPC
@@ -4102,7 +4103,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1965409509199110
 GameObject:
   m_ObjectHideFlags: 0
@@ -4123,7 +4124,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4182031922024626
 Transform:
   m_ObjectHideFlags: 0
@@ -4528,3 +4529,19 @@ CapsuleCollider:
   m_Height: 1.9368834
   m_Direction: 1
   m_Center: {x: 0.00026369092, y: 0.97036254, z: 0.013126909}
+--- !u!114 &8285787866416504386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645872658069104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 217e0c77ae44c4a49a92fdab12a3d18f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialState: 0
+  movementSpeed: 5
+  detectionRadius: 10
+  <RotationSpeed>k__BackingField: 2
