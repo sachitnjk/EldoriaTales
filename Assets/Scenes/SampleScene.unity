@@ -4542,6 +4542,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialState: 0
-  movementSpeed: 5
-  detectionRadius: 10
-  <RotationSpeed>k__BackingField: 2
+  movementSpeed: 0
+  detectionRadius: 0
+  <RotationSpeed>k__BackingField: 0

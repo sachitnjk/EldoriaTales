@@ -28,11 +28,11 @@ public class NPCController : MonoBehaviour
 		{
 			currentState.UpdateState();
 		}
-		Debug.Log(currentState);
 	}
 
 	private NPCStateBase CreateState(NPCState state)
 	{
+
 		switch (state)
 		{
 			case NPCState.Idle:
@@ -67,16 +67,16 @@ public class NPCController : MonoBehaviour
 		CurrentSpeed = updatedSpeed;
 	}
 
-	//private void InteractionCheckChange()
-	//{
-	//	if(GameManager.Instance.isInteractingWithPlayer) 
-	//	{
-	//		ChangeState(NPCState.ChattingPlayer);
-	//	}
-	//	if(!GameManager.Instance.isInteractingWithPlayer && GameManager.Instance.isInteractingWithNPC) 
-	//	{
-	//		ChangeState(NPCState.ChattingNPC);
-	//	}
-	//}
+	private void InteractionCheckChange()
+	{
+		if (GameManager.Instance.isInteractingWithPlayer)
+		{
+			ChangeState(NPCState.ChattingPlayer);
+		}
+		if (!GameManager.Instance.isInteractingWithPlayer && GameManager.Instance.isInteractingWithNPC)
+		{
+			ChangeState(NPCState.ChattingNPC);
+		}
+	}
 
 }
