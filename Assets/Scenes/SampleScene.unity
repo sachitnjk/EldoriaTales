@@ -2398,7 +2398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 080f8bc1bb83fee429d9d379a5ce44e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcName: 
+  npcName: Elise
 --- !u!1 &1116763776
 GameObject:
   m_ObjectHideFlags: 0
@@ -4076,7 +4076,7 @@ GameObject:
   - component: {fileID: 8285787866416504384}
   - component: {fileID: 8285787866416504385}
   m_Layer: 0
-  m_Name: Bean_1_F
+  m_Name: Bean_1_F_Elise
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
