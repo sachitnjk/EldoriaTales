@@ -15,7 +15,6 @@ public class IdleState : NPCStateBase
 	{
 		SetRandomIdleTime();
 		idleTimer = 0f;
-		Debug.Log("going here");
 	}
 	public override void UpdateState()
 	{
@@ -23,8 +22,7 @@ public class IdleState : NPCStateBase
 
 		if (idleTimer >= currentIdleDuration)
 		{
-			Debug.Log("Changing to move");
-			//npcAI.ChangeState(NPCState.IdleMove);
+			npcAI.ChangeState(NPCState.IdleMove);
 		}
 	}
 	public override void ExitState()

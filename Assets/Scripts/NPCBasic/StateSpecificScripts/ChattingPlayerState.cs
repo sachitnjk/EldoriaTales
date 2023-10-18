@@ -10,12 +10,19 @@ public class ChattingPlayerState : NPCStateBase
 
 	public override void EnterState()
 	{
+		npcAI.navMeshAgent.destination = npcAI.transform.position;
+		//npcAI.SetCurrentSpeed(0f);
 	}
 	public override void UpdateState()
 	{
+		if(!GameManager.Instance.isInteractingWithPlayer)
+		{
+			npcAI.ChangeState(NPCState.Idle);
+		}
 	}
 	public override void ExitState()
 	{
+		npcAI.navMeshAgent.ResetPath();
 	}
 
 	public override NPCState GetStateEnum()

@@ -354,6 +354,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_PolygonApocalypse_Bld_House_01
       objectReference: {fileID: 0}
+    - target: {fileID: 1310734645493494, guid: 09135c03210603f42b4207ff66b56781, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4230341433385666, guid: 09135c03210603f42b4207ff66b56781, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -3101,6 +3105,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_PolygonApocalypse_Bld_House_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1310734645493494, guid: 09135c03210603f42b4207ff66b56781, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4230341433385666, guid: 09135c03210603f42b4207ff66b56781, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4054,13 +4062,14 @@ GameObject:
   - component: {fileID: 1244077182}
   - component: {fileID: 8285787865915216895}
   - component: {fileID: 8285787865915216896}
+  - component: {fileID: 8285787865915216897}
   m_Layer: 0
   m_Name: Bean_4_F_Luna
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1645872658069104
 GameObject:
   m_ObjectHideFlags: 0
@@ -4097,13 +4106,14 @@ GameObject:
   - component: {fileID: 1349286297}
   - component: {fileID: 3257525528282660480}
   - component: {fileID: 3257525528282660481}
+  - component: {fileID: 3257525528282660482}
   m_Layer: 0
   m_Name: Bean_3_M_Blake
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1965409509199110
 GameObject:
   m_ObjectHideFlags: 0
@@ -4118,13 +4128,14 @@ GameObject:
   - component: {fileID: 1388152493}
   - component: {fileID: 4749542407747067082}
   - component: {fileID: 4749542407747067083}
+  - component: {fileID: 4749542407747067084}
   m_Layer: 0
   m_Name: Bean_2_F_Jane
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4182031922024626
 Transform:
   m_ObjectHideFlags: 0
@@ -4394,7 +4405,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1849736564567924}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.8646826
+  m_Radius: 0.7
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -4421,6 +4432,23 @@ CapsuleCollider:
   m_Height: 2.0323248
   m_Direction: 1
   m_Center: {x: 0, y: 1.0174243, z: 0.026983708}
+--- !u!114 &3257525528282660482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849736564567924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 217e0c77ae44c4a49a92fdab12a3d18f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialState: 0
+  detectionRadius: 0
+  <RotationSpeed>k__BackingField: 0
+  navMeshAgent: {fileID: 0}
+  npcInteractionScript: {fileID: 0}
 --- !u!195 &4749542407747067082
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4430,7 +4458,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1965409509199110}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5278149
+  m_Radius: 0.7
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -4457,6 +4485,23 @@ CapsuleCollider:
   m_Height: 1.7245162
   m_Direction: 1
   m_Center: {x: -0.000080555685, y: 0.86424947, z: 0.0032529687}
+--- !u!114 &4749542407747067084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965409509199110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 217e0c77ae44c4a49a92fdab12a3d18f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialState: 0
+  detectionRadius: 0
+  <RotationSpeed>k__BackingField: 0
+  navMeshAgent: {fileID: 0}
+  npcInteractionScript: {fileID: 0}
 --- !u!195 &8285787865915216895
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4466,7 +4511,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1645872450386865}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.6454419
+  m_Radius: 0.7
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -4493,6 +4538,23 @@ CapsuleCollider:
   m_Height: 1.9368834
   m_Direction: 1
   m_Center: {x: 0.00026369095, y: 0.97036254, z: 0.01312691}
+--- !u!114 &8285787865915216897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645872450386865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 217e0c77ae44c4a49a92fdab12a3d18f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialState: 0
+  detectionRadius: 0
+  <RotationSpeed>k__BackingField: 0
+  navMeshAgent: {fileID: 0}
+  npcInteractionScript: {fileID: 0}
 --- !u!195 &8285787866416504384
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4502,7 +4564,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1645872658069104}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.64544183
+  m_Radius: 0.7
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -4542,6 +4604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialState: 0
-  movementSpeed: 0
   detectionRadius: 0
   <RotationSpeed>k__BackingField: 0
+  navMeshAgent: {fileID: 0}
+  npcInteractionScript: {fileID: 0}

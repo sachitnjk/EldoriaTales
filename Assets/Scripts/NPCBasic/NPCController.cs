@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Rendering;
 
 public class NPCController : MonoBehaviour
@@ -10,14 +11,21 @@ public class NPCController : MonoBehaviour
 	public float CurrentSpeed {  get;private set; }
 
 	[Header("NPC basic attributes")]
-	[SerializeField] private float movementSpeed;
 	[SerializeField] private float detectionRadius;
 	[field: SerializeField] public float RotationSpeed { get; private set; }
+
+	[HideInInspector] public NavMeshAgent navMeshAgent;
+	[HideInInspector] public NPCInteractedScript npcInteractionScript;
 
 	private NPCStateBase currentState;
 
 	private void Start()
 	{
+		navMeshAgent = GetComponent<NavMeshAgent>();
+		npcInteractionScript = GetComponent<NPCInteractedScript>();
+
+		CurrentSpeed = 4f;
+
 		currentState = CreateState(initialState);
 		currentState.EnterState();
 	}
@@ -28,6 +36,8 @@ public class NPCController : MonoBehaviour
 		{
 			currentState.UpdateState();
 		}
+
+		InteractionCheckChange();
 	}
 
 	private NPCStateBase CreateState(NPCState state)
@@ -37,12 +47,12 @@ public class NPCController : MonoBehaviour
 		{
 			case NPCState.Idle:
 				return new IdleState(this);
-			//case NPCState.IdleMove:
-			//	return new IdleMoveState(this);
+			case NPCState.IdleMove:
+				return new IdleMoveState(this);
 			//case NPCState.ChattingNPC:
 			//return new ChattingNPCState(this);
-			//case NPCState.ChattingPlayer:
-			//return new ChattingPlayer(this);
+			case NPCState.ChattingPlayer:
+				return new ChattingPlayerState(this);
 			default:
 				return null;
 		}
@@ -62,14 +72,9 @@ public class NPCController : MonoBehaviour
 		}
 	}
 
-	private void SetMovementSpeed(float updatedSpeed)
-	{
-		CurrentSpeed = updatedSpeed;
-	}
-
 	private void InteractionCheckChange()
 	{
-		if (GameManager.Instance.isInteractingWithPlayer)
+		if (GameManager.Instance.isInteractingWithPlayer && IsInteractedNPCCheck())
 		{
 			ChangeState(NPCState.ChattingPlayer);
 		}
@@ -77,6 +82,23 @@ public class NPCController : MonoBehaviour
 		{
 			ChangeState(NPCState.ChattingNPC);
 		}
+	}
+
+	private bool IsInteractedNPCCheck()
+	{
+		if(npcInteractionScript.npcName == GameManager.Instance.interactingNPCName)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	public void SetCurrentSpeed(float updatedSpeed)
+	{
+		CurrentSpeed = updatedSpeed;
 	}
 
 }
