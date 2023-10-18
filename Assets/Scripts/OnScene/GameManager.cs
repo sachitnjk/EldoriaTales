@@ -7,7 +7,8 @@ public class GameManager : MonoBehaviour
 {
 	public static GameManager Instance { get; private set; }
 	[field: SerializeField] public GameObject InputTextArea { get;private set; }
-	public bool isInteracting {  get; set; }
+	public bool isInteractingWithPlayer {  get; set; }
+	public bool isInteractingWithNPC {  get; set; }
 
 	public TextMeshProUGUI chatOutputField;
 
@@ -27,6 +28,6 @@ public class GameManager : MonoBehaviour
 
 	private void Start()
 	{
-		isInteracting = false;
+		isInteractingWithPlayer = false;
 	}
 }

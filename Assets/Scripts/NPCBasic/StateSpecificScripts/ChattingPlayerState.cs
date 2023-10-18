@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IdleState : NPCStateBase
+public class ChattingPlayerState : NPCStateBase
 {
-	public IdleState(NPCController npcAI) : base(npcAI)
+	public ChattingPlayerState(NPCController npcAI) : base(npcAI)
 	{
 	}
+
 	public override void EnterState()
 	{
 	}
@@ -19,6 +20,6 @@ public class IdleState : NPCStateBase
 
 	public override NPCState GetStateEnum()
 	{
-		return NPCState.Idle;
+		return NPCState.ChattingPlayer;
 	}
 }

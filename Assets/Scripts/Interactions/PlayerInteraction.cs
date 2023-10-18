@@ -33,7 +33,7 @@ public class PlayerInteraction : MonoBehaviour
 		{
 			Interact();
 		}
-		if(GameManager.Instance.isInteracting) 
+		if(GameManager.Instance.isInteractingWithPlayer) 
 		{
 			InputTextController(true);
 		}
@@ -49,18 +49,18 @@ public class PlayerInteraction : MonoBehaviour
 		RaycastHit hit;
 		Ray ray = new Ray(interactionPoint.position, interactionPoint.forward);
 
-		if ( !GameManager.Instance.isInteracting && Physics.Raycast(ray, out hit, detectionDistance))
+		if ( !GameManager.Instance.isInteractingWithPlayer && Physics.Raycast(ray, out hit, detectionDistance))
 		{
 			if (hit.collider.CompareTag("NPC"))
 			{
-				GameManager.Instance.isInteracting = true;
+				GameManager.Instance.isInteractingWithPlayer = true;
 				interactingNPC = hit.collider.gameObject;
 				TurnNPCToPlayer();
 				Cursor.lockState = CursorLockMode.Confined;
 			}
 			else
 			{
-				GameManager.Instance.isInteracting = false;
+				GameManager.Instance.isInteractingWithPlayer = false;
 			}
 		}
 	}

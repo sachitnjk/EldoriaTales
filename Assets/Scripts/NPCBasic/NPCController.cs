@@ -60,4 +60,17 @@ public class NPCController : MonoBehaviour
 	{
 		CurrentSpeed = updatedSpeed;
 	}
+
+	private void InteractionCheckChange()
+	{
+		if(GameManager.Instance.isInteractingWithPlayer) 
+		{
+			ChangeState(NPCState.ChattingPlayer);
+		}
+		if(!GameManager.Instance.isInteractingWithPlayer && GameManager.Instance.isInteractingWithNPC) 
+		{
+			ChangeState(NPCState.ChattingNPC);
+		}
+	}
+
 }

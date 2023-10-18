@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
 
 	private void Update()
 	{
-		if(GameManager.Instance.isInteracting && enterAction.WasPerformedThisFrame())
+		if(GameManager.Instance.isInteractingWithPlayer && enterAction.WasPerformedThisFrame())
 		{
 			userInput = chatInputField.text;
 			npcName = GameManager.Instance.interactingNPCName;
@@ -35,7 +35,7 @@ public class UIManager : MonoBehaviour
 
 	public void ReturnFromConversation()
 	{
-		GameManager.Instance.isInteracting = false;
+		GameManager.Instance.isInteractingWithPlayer = false;
 	}
 
 }
