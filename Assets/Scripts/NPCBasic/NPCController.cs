@@ -49,8 +49,6 @@ public class NPCController : MonoBehaviour
 				return new IdleState(this);
 			case NPCState.IdleMove:
 				return new IdleMoveState(this);
-			//case NPCState.ChattingNPC:
-			//return new ChattingNPCState(this);
 			case NPCState.ChattingPlayer:
 				return new ChattingPlayerState(this);
 			default:

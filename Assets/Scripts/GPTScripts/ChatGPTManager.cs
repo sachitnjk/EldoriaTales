@@ -7,6 +7,13 @@ using System.IO;
 using static UnityEngine.EventSystems.EventTrigger;
 using Newtonsoft.Json;
 
+[System.Serializable]
+public class NPCDataEntry
+{
+	public string npcName;
+	public string backstory;
+}
+
 public class NPCData
 {
 	public string backstory;
@@ -22,28 +29,24 @@ public class ChatGPTManager : MonoBehaviour
 {
 	private OpenAIApi openAI = new OpenAIApi();
 
+	[SerializeField]
+	private List<NPCDataEntry> npcDataEntries;
+
 	private Dictionary<string, NPCData> npcDataDictionary = new Dictionary<string, NPCData>();
 
 	// NPC-specific data
 	private void InitializeNPCData()
 	{
-		npcDataDictionary.Add("Jane", new NPCData {
-			backstory = "You are a farmer's daughter. Your earliest memory of this place is, waking up here one day and finding yourself to be a bean like character. You are confused but happy that you dont have much of anything to worry about. Play this role for any questions or comments directed towards you. Do not break character. Even if the same question is being asked multiple times."
-		});
-		npcDataDictionary.Add("Luna", new NPCData { 
-			backstory = "You are from the year 2050, while exploring a cave, you fell through a hole and ended up in this mysterious place where everyone is bean shaped. Play this role for any questions or comments directed towards you. Do not break character. Even if the same question is being asked multiple times."
-		});
-		npcDataDictionary.Add("Blake", new NPCData
+		foreach(var entry in npcDataEntries)
 		{
-			backstory = "You were a cowboy who was heardig his cattle. Suddenly you saw a bright light in the sky and you found yourself to be in this place with two other people Jane, who was a farmers daughter and Luna who claims she is from the future but you think she is crazy. Play this role for any questions or comments directed towards you. DO not break character. Even if the same question is being asked multiple times."
-		});
-		npcDataDictionary.Add("Elise", new NPCData
-		{
-			backstory = "You are a time traveller and the only one out of Jane, Luna and Blake who knows what the place you are in really is. You know that this is a game and everyone is a character including you. You dont know how to feel about it. Play this role for any questions or comments directed towards you. Do not break character. Even if the same question is being asked multiple times."
-		});
+			npcDataDictionary.Add(entry.npcName, new NPCData
+			{
+				backstory = entry.backstory + "Play this role for any questions or comments directed towards you. Do not break character. Even if the same question is being asked multiple times."
+			});
+		}
 	}
 
-	private void Start()
+	private void Awake()
 	{
 		InitializeNPCData();
 	}
