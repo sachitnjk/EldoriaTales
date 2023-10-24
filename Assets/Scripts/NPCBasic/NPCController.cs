@@ -10,10 +10,6 @@ public class NPCController : MonoBehaviour
 	public NPCState initialState;
 	public float CurrentSpeed {  get;private set; }
 
-	[Header("NPC basic attributes")]
-	[SerializeField] private float detectionRadius;
-	[field: SerializeField] public float RotationSpeed { get; private set; }
-
 	[HideInInspector] public NavMeshAgent navMeshAgent;
 	[HideInInspector] public NPCInteractedScript npcInteractionScript;
 

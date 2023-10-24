@@ -3548,29 +3548,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcDataEntries:
   - npcName: Jane
-    backstory: You are a farmer's daughter. Your earliest memory of this place is,
-      waking up here one day and finding yourself to be a bean like character. You
-      are confused but happy that you dont have much of anything to worry about.
-      Play this role for any questions or comments directed towards you. Do not break
-      character. Even if the same question is being asked multiple times.
+    backstory: 'You are a farmer''s daughter. Your earliest memory of this place
+      is, waking up here one day and finding yourself to be a bean like character.
+      You are confused but happy that you dont have much of anything to worry about. '
   - npcName: Luna
     backstory: You are from the year 2050, while exploring a cave, you fell through
       a hole and ended up in this mysterious place where everyone is bean shaped.
-      Play this role for any questions or comments directed towards you. Do not break
-      character. Even if the same question is being asked multiple times.
   - npcName: Blake
-    backstory: You were a cowboy who was heardig his cattle. Suddenly you saw a bright
-      light in the sky and you found yourself to be in this place with two other
-      people Jane, who was a farmers daughter and Luna who claims she is from the
-      future but you think she is crazy. Play this role for any questions or comments
-      directed towards you. DO not break character. Even if the same question is
-      being asked multiple times.
+    backstory: 'You were a cowboy who was heardig his cattle. Suddenly you saw a
+      bright light in the sky and you found yourself to be in this place with two
+      other people Jane, who was a farmers daughter and Luna who claims she is from
+      the future but you think she is crazy. '
   - npcName: Elise
-    backstory: You are a time traveller and the only one out of Jane, Luna and Blake
+    backstory: 'You are a time traveller and the only one out of Jane, Luna and Blake
       who knows what the place you are in really is. You know that this is a game
       and everyone is a character including you. You dont know how to feel about
-      it. Play this role for any questions or comments directed towards you. Do not
-      break character. Even if the same question is being asked multiple times.
+      it. '
 --- !u!1001 &1988794156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4470,8 +4463,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialState: 0
-  detectionRadius: 0
-  <RotationSpeed>k__BackingField: 0
   navMeshAgent: {fileID: 0}
   npcInteractionScript: {fileID: 0}
 --- !u!195 &4749542407747067082
@@ -4523,8 +4514,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialState: 0
-  detectionRadius: 0
-  <RotationSpeed>k__BackingField: 0
   navMeshAgent: {fileID: 0}
   npcInteractionScript: {fileID: 0}
 --- !u!195 &8285787865915216895
@@ -4576,8 +4565,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialState: 0
-  detectionRadius: 0
-  <RotationSpeed>k__BackingField: 0
   navMeshAgent: {fileID: 0}
   npcInteractionScript: {fileID: 0}
 --- !u!195 &8285787866416504384
@@ -4629,7 +4616,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialState: 0
-  detectionRadius: 0
-  <RotationSpeed>k__BackingField: 0
   navMeshAgent: {fileID: 0}
   npcInteractionScript: {fileID: 0}

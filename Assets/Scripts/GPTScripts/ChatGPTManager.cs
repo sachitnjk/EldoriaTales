@@ -11,6 +11,8 @@ using Newtonsoft.Json;
 public class NPCDataEntry
 {
 	public string npcName;
+
+	[TextArea(10, 15)]
 	public string backstory;
 }
 
@@ -39,9 +41,19 @@ public class ChatGPTManager : MonoBehaviour
 	{
 		foreach(var entry in npcDataEntries)
 		{
+			string otherNPCInfo = "";
+			foreach(var otherEntry in npcDataEntries)
+			{
+				//excluding current npc from list of other NPCs
+				if(entry != otherEntry) 
+				{
+					//passing the name and backstory of other npc
+					otherNPCInfo += $"{otherEntry.npcName}: {otherEntry.backstory}";
+				}
+			}
 			npcDataDictionary.Add(entry.npcName, new NPCData
 			{
-				backstory = entry.backstory + "Play this role for any questions or comments directed towards you. Do not break character. Even if the same question is being asked multiple times."
+				backstory = entry.backstory + otherNPCInfo + "Play this role for any questions or comments directed towards you. Do not break character. Even if the same question is being asked multiple times."
 			});
 		}
 	}
