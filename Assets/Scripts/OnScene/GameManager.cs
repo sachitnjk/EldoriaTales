@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -9,6 +10,8 @@ public class GameManager : MonoBehaviour
 	[field: SerializeField] public GameObject InputTextArea { get;private set; }
 	public bool isInteractingWithPlayer {  get; set; }
 	public bool isInteractingWithNPC {  get; set; }
+
+	public event Action<ColorKD> OnDoorOpened;
 
 	public TextMeshProUGUI chatOutputField;
 
@@ -24,6 +27,11 @@ public class GameManager : MonoBehaviour
 		{
 			Destroy(Instance);
 		}
+	}
+
+	public void TriggerOnDoorOpenedEvent(ColorKD doorColor)
+	{
+		OnDoorOpened?.Invoke(doorColor);
 	}
 
 	private void Start()
