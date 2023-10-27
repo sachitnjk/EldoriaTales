@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public enum ColorKD
 {
 	Red,
-	Yellow,
+	Green,
 	Blue
 }
 
