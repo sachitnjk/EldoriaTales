@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2064740408122897910}
   - component: {fileID: 2064740408122897911}
   - component: {fileID: 2064740408122897908}
+  - component: {fileID: 3023307538630243909}
   m_Layer: 0
   m_Name: Door_Green_Model
   m_TagString: Untagged
@@ -97,6 +98,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0252985, y: 2.2243483, z: 0.106464356}
   m_Center: {x: -0.51264864, y: 1.1121742, z: -0.0043919235}
+--- !u!95 &3023307538630243909
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064740408122897909}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ff498b1aebce6a5439523e5e22fa228c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2064740408929038189
 GameObject:
   m_ObjectHideFlags: 0

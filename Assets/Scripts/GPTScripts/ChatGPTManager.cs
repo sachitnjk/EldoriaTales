@@ -21,6 +21,7 @@ public class NPCData
 	public string backstory;
 	public List<ChatMessage> conversationHistory;
 
+
 	public NPCData()
 		{
 			conversationHistory = new List<ChatMessage>();
@@ -30,6 +31,8 @@ public class NPCData
 public class ChatGPTManager : MonoBehaviour
 {
 	private OpenAIApi openAI = new OpenAIApi();
+
+	[SerializeField] private string questToPlayer;
 
 	[SerializeField]
 	private List<NPCDataEntry> npcDataEntries;
@@ -47,13 +50,13 @@ public class ChatGPTManager : MonoBehaviour
 				//excluding current npc from list of other NPCs
 				if(entry != otherEntry) 
 				{
-					//passing the name and backstory of other npc
-					otherNPCInfo += $"{otherEntry.npcName}: {otherEntry.backstory}";
+					//passing the name and backstory of other npc also added delimiter "|" to seperate stories
+					otherNPCInfo += $"{otherEntry.npcName}: {otherEntry.backstory}|";
 				}
 			}
 			npcDataDictionary.Add(entry.npcName, new NPCData
 			{
-				backstory = entry.backstory + otherNPCInfo + "Play this role for any questions or comments directed towards you. Do not break character. Even if the same question is being asked multiple times."
+				backstory = entry.backstory + otherNPCInfo + questToPlayer + "Play this role for any questions or comments directed towards you. Do not break character. Even if the same question is being asked multiple times."
 			});
 		}
 	}
