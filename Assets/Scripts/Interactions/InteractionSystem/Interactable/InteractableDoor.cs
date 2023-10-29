@@ -9,6 +9,7 @@ public class InteractableDoor : BaseInteractable
 	[SerializeField] private ColorKD associatedDoorColor;
 	private Animator doorAnimator;
 	private Collider doorTriggerCollider;
+	private string inputFieldText;
 
 	protected override void Start()
 	{
@@ -36,6 +37,12 @@ public class InteractableDoor : BaseInteractable
 		}
 	}
 
+	private void OnTriggerExit(Collider other)
+	{
+		base.OnTriggerExit(other);
+		UIManager.Instance.doorInteractionBox.text = "";
+	}
+
 	protected override void OnInteract()
 	{
 		base.OnInteract();
@@ -48,11 +55,21 @@ public class InteractableDoor : BaseInteractable
 		if (Inventory.Instance.PlayerHasKey(associatedDoorColor))
 		{
 			Debug.Log("Interact");
+			inputFieldText = "Interact";
+			StartCoroutine(ResetInteractionBoxAfterDelay(1f));
 		}
 		else if (!Inventory.Instance.PlayerHasKey(associatedDoorColor))
 		{
 			Debug.Log("get correct key to interact");
+			inputFieldText = "get correct key to interact";
 		}
+		UIManager.Instance.doorInteractionBox.text = inputFieldText;
+	}
+
+	private IEnumerator ResetInteractionBoxAfterDelay(float delay)
+	{
+		yield return new WaitForSeconds(delay);
+		UIManager.Instance.doorInteractionBox.text = null;
 	}
 
 	private void OpenDoor(ColorKD doorColor)

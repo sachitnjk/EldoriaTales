@@ -46,15 +46,21 @@ public class Inventory : MonoBehaviour
 		{
 			collectedKeys.Remove(keyColor);
 			Debug.Log(keyColor + "key used");
+			UIManager.Instance.interactionBox.text = keyColor + "Key used";
 		}
-		else
-		{
-			Debug.Log("key not found in inventory");
-		}
+
+		StartCoroutine(ResetInteractionBoxAfterDelay(1f));
+	}
+
+	private IEnumerator ResetInteractionBoxAfterDelay(float delay)
+	{
+		yield return new WaitForSeconds(delay);
+		UIManager.Instance.interactionBox.text = null;
 	}
 
 	public bool PlayerHasKey(ColorKD heldKeyColor)
 	{
 		return collectedKeys.Contains(heldKeyColor);
 	}
+
 }

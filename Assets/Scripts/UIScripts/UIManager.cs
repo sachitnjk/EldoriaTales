@@ -7,14 +7,30 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+	public static UIManager Instance { get; private set; }
+
 	public ChatGPTManager chatGPTManager;
 	public TextMeshProUGUI chatInputField;
+	public TextMeshProUGUI interactionBox;
+	public TextMeshProUGUI doorInteractionBox;
 
 	private PlayerInput playerInput;
 	private InputAction enterAction;
 
 	private string userInput;
 	private string npcName;
+
+	private void Awake()
+	{
+		if (Instance == null)
+		{
+			Instance = this;
+		}
+		else
+		{
+			Destroy(Instance);
+		}
+	}
 
 	private void Start()
 	{
