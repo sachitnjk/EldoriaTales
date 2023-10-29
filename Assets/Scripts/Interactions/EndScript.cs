@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class EndScript : MonoBehaviour
 {
@@ -15,20 +16,6 @@ public class EndScript : MonoBehaviour
 	}
 	private void OnTriggerEnter(Collider other)
 	{
-		UIManager.Instance.interactionBox.text = "Interact to exit Eldoria";
-	}
-
-	private void OnTriggerExit(Collider other)
-	{
-		UIManager.Instance.interactionBox.text = null;
-	}
-
-	private void InteractionCheck()
-	{
-		if(interactionAction.triggered) 
-		{
-			Debug.Log("exit called");
-			Application.Quit();
-		}
+		SceneManager.LoadScene(2);
 	}
 }
