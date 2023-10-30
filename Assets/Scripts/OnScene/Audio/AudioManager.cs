@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class AudioManager : MonoBehaviour
 		}
 
 		PlayNextBGM();
+
 	}
 
 	private void PlayNextBGM()
