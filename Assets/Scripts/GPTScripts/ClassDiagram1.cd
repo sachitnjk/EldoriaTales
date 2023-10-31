@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="NPCDataEntry">
+    <Position X="4.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAABA=</HashCode>
+      <FileName>Assets\Scripts\GPTScripts\ChatGPTManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NPCData">
+    <Position X="8" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Assets\Scripts\GPTScripts\ChatGPTManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChatGPTManager">
+    <Position X="6.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAEAAABAAAAAAAAAAAACAAAAAAAAAAIAAAAABAEA=</HashCode>
+      <FileName>Assets\Scripts\GPTScripts\ChatGPTManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
