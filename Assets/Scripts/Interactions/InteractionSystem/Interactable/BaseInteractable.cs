@@ -33,7 +33,6 @@ public class BaseInteractable : MonoBehaviour
 		{
 			if (interactionAction.WasPerformedThisFrame())
 			{
-				Debug.Log("interaction performed");
 				OnInteract();
 			}
 		}

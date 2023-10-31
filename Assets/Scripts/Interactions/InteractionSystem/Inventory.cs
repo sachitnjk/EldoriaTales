@@ -23,21 +23,15 @@ public class Inventory : MonoBehaviour
 
 	public void OpenDoorTry(ColorKD doorColor)
 	{
-		if(collectedKeys.Contains(doorColor))
+		if (collectedKeys.Contains(doorColor))
 		{
 			GameManager.Instance.TriggerOnDoorOpenedEvent(doorColor);
-			//Debug.Log("Door opened");
-		}
-		else
-		{
-			Debug.Log("Key for door missing");
 		}
 	}
 
 	public void CollectKey(ColorKD key)
 	{
 		collectedKeys.Add(key);
-		Debug.Log(key + "key collected");
 	}
 
 	public void UseKey(ColorKD keyColor) 
@@ -45,7 +39,6 @@ public class Inventory : MonoBehaviour
 		if(collectedKeys.Contains(keyColor))
 		{
 			collectedKeys.Remove(keyColor);
-			Debug.Log(keyColor + "key used");
 			UIManager.Instance.interactionBox.text = keyColor + "Key used";
 		}
 

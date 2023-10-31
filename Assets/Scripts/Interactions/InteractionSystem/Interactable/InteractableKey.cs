@@ -16,7 +16,7 @@ public class InteractableKey : BaseInteractable
 
 	protected override void InteractableTriggerAction()
 	{
-		Debug.Log("interact to collect key");
+		//Debug.Log("interact to collect key");
 	}
 
 	protected override void OnInteract()

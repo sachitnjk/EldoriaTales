@@ -98,10 +98,6 @@ public class ChatGPTManager : MonoBehaviour
 			npcData.conversationHistory.Add(chatResponse);
 
 			GameManager.Instance.chatOutputField.text += "\n" + chatResponse.Content;
-			//Debug.Log(chatResponse.Content);
 		}
-
-		// Clear messages if needed, keeping commented for now
-		//messages.Clear();
 	}
 }

@@ -54,13 +54,11 @@ public class InteractableDoor : BaseInteractable
 	{
 		if (Inventory.Instance.PlayerHasKey(associatedDoorColor))
 		{
-			Debug.Log("Interact");
 			inputFieldText = "Interact";
 			StartCoroutine(ResetInteractionBoxAfterDelay(1f));
 		}
 		else if (!Inventory.Instance.PlayerHasKey(associatedDoorColor))
 		{
-			Debug.Log("get correct key to interact");
 			inputFieldText = "get correct key to interact";
 		}
 		UIManager.Instance.doorInteractionBox.text = inputFieldText;
